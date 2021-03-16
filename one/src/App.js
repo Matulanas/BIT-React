@@ -1,22 +1,17 @@
-import logo from './logo.svg';
 import './App.css';
+import ClasicBox from './components/ClasicBox';
+import BoxUniversal from './components/BoxUniversal';
+import {normalStyle, fancyStyle} from './shared/styles';
+import {getRandomInt} from './functions';
 
-function App() {
+
+function App() { // <-- Pagrindinis Komponentas
   return (
     <div className="App">
       <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        <BoxUniversal color={'white'} number={3} boxStyle={normalStyle}/>
+        <BoxUniversal color={'yellow'} number={getRandomInt(100)} boxStyle={fancyStyle}/>
+        <ClasicBox color={'yellow'} />
       </header>
     </div>
   );
