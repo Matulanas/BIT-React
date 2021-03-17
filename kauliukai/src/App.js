@@ -1,6 +1,7 @@
 import logo from './img/logo.png';
 import './App.css';
 import DiceBox from './components/DiceBox';
+import Button from './components/Button';
 
 function App() {
   return (
@@ -9,7 +10,8 @@ function App() {
         <img src={logo} className="App-logo" alt="logo" />
         <div className="main">
           <DiceBox />
-          <a href="#" class="myButton">Ridenti kauliuką</a>
+          <DiceBox />
+          <Button />
         </div>
 
       </header>
