@@ -3,12 +3,12 @@ import { Component } from 'react';
 
 class MagixButton extends Component {
 
-    constructor () {
-      super ();
+    // constructor () {
+      // super ();
     //   this.state = {
     //     color: 'red'
     //   }
-    }
+    // }
   
     // changeColor = () => { // <-- keičia steitą
     //     if('red' === this.state.color) {
