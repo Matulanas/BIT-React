@@ -1,28 +1,38 @@
-import { Component } from "react";
+// import { Component } from "react";
 // import { getRandomInt } from "../functions";
 
 
-class DiceBox extends Component {
+const DiceBox = props => {
 
-    constructor() {
-        super ();
-        this.state = {
-            randomNumber: 1
-        }
-    }
+    return (
+        <div className="dice-box">
+            <p>{ props.number }</p>
+        </div>    
+    )
 
-    changeNumber = () => {
-        this.setState({ randomNumber: 3})
-    }
-
-    render() {
-
-        return (
-            <div className="dice-box">
-                <p>{ this.state.randomNumber }</p>
-            </div>    
-        )
-    }
 }
+
+// class DiceBox extends Component {
+
+//     // constructor() {
+//     //     super ();
+//     //     this.state = {
+//     //         randomNumber: getRandomInt()
+//     //     }
+//     // }
+
+//     // changeNumber = () => {
+//     //     this.setState({ randomNumber: 3})
+//     // }
+
+//     render() {
+
+//         return (
+//             <div className="dice-box">
+//                 <p>{ this.state.randomNumber }</p>
+//             </div>    
+//         )
+//     }
+// }
 
 export default DiceBox;

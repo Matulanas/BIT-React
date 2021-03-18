@@ -1,7 +1,7 @@
 import logo from './img/logo.png';
 import './App.css';
-import DiceBox from './components/DiceBox';
-import Button from './components/Button';
+import Parent from './components/Parent';
+
 
 function App() {
   return (
@@ -9,9 +9,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <div className="main">
-          <DiceBox />
-          <DiceBox />
-          <Button />
+          <Parent />
         </div>
 
       </header>
