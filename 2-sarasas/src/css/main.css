@@ -1,0 +1,33 @@
+.box {
+    display: flex;
+    flex-direction: row;
+}
+
+.list-box {
+    border: 1px solid yellow;
+    width: 150px;
+    padding: 30px;
+    margin: 10px;
+    list-style: none;
+    text-align: left;
+}
+
+.buttons-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+    button {
+        position: relative;
+        height: 40px;
+        width: 100px;
+        margin: 5px;
+        border-radius: 5px;
+        border: 0;
+        outline: none;
+    }
+        button:active {
+            top: 1px;
+        }
