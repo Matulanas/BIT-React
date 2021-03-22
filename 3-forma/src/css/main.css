@@ -1,0 +1,76 @@
+body * {
+    outline: none;
+}
+.error {
+    color: red;
+    font-size: 15px;
+    padding: 0;
+    margin: 0;
+}
+.block {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+    .block .box-header {
+        text-align: center;
+        font-size: 19px;
+        padding-bottom: 10px;
+    }
+
+.block-text,
+.block-form {
+    border: 1px solid yellow;
+    padding: 30px;
+    margin: 30px;
+}
+
+    .block-text {
+        width: 500px;
+        display: flex;
+        text-align: left;
+        flex-direction: column;
+        box-sizing: border-box;
+        word-break: break-all;
+    }
+
+    .block-form form {
+        display: flex;
+        flex-direction: column;
+        width: 200px;
+    }
+        .block-form textarea {
+            padding: 10px;
+            resize: vertical;
+            font-size: 16px;
+        }
+
+    .block-form button {
+        width: 50%;
+        height: 30px;
+        margin: 5px auto;
+        border: 0;
+        border-radius: 2px;
+        outline: none;
+        position: relative;
+    }
+        .block-form button:hover {
+            background: #e3e3e3;
+        }
+        .block-form button:active {
+            top: 1px;
+        }
+
+    .input-value {
+        font-size: 18px;
+        color: yellow;
+        padding-bottom: 10px;
+    }
+        .input-value span {
+            color: white;
+            padding-right: 5px;
+        }
+    
+    .list-box {
+        font-size: 18px;
+    }

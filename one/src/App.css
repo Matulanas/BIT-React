@@ -39,8 +39,8 @@
 
 
 .box {
-  width: 200px;
-  height: 200px;
+  /* width: 200px;
+  height: 200px; */
   border: 1px solid black;
   display: flex;
   justify-content: center;
@@ -82,4 +82,19 @@ ul, li {
   height: 50px;
   border-radius: 50%;
   margin-top: 20px;
+}
+
+
+.line {
+  display: flex;
+  flex-direction: row;
+}
+.line span {
+  font-size: 10px;
+}
+.slider-box {
+  margin: 10px;
+  padding: 10px 60px;
+  font-size: 10px;
+  border: 1px solid white;
 }

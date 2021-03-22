@@ -2,6 +2,9 @@ import { Component } from 'react';
 
 import MagicButton from './MagicButton';
 
+import { Button } from '@material-ui/core';
+
+import { Alert } from '@material-ui/lab';
 
 class TwoButtonBox extends Component {
 
@@ -36,6 +39,8 @@ class TwoButtonBox extends Component {
         <div className="box" style={{borderColor: this.state.color}}>
           <MagicButton action={ this.changeColor1 } color={this.state.color2} bname={'ONE'} />
           <MagicButton action={ this.changeColor2 } color={this.state.color1} bname={'TEN'} />
+          <Button>Material UI</Button>
+          <Alert severity="warning">This is a warning alert — check it out!</Alert>
         </div>
       )
     }
