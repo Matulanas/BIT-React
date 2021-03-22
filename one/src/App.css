@@ -39,8 +39,9 @@
 
 
 .box {
-  /* width: 200px;
-  height: 200px; */
+  min-width: 200px;
+  min-height: 200px;
+  max-width: 300px;
   border: 1px solid black;
   display: flex;
   justify-content: center;
@@ -94,7 +95,12 @@ ul, li {
 }
 .slider-box {
   margin: 10px;
-  padding: 10px 60px;
+  padding: 10px 10px;
   font-size: 10px;
   border: 1px solid white;
+}
+
+.box-text {
+  font-size: 14px;
+  padding: 0 10px;
 }
