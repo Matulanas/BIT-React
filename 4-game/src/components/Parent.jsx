@@ -10,7 +10,7 @@ class Parent extends Component {
         super();
         this.state = {
             rows: 11,
-            value: 10,
+            value: 0,
             mushroomHorizontal: 0,
             mushroomVertical: 0,
             score: 0
@@ -70,8 +70,8 @@ class Parent extends Component {
                             value={this.state.value} 
                             mushroomHorizontal={this.getHorizontalValue}
                             mushroomVertical={this.getVerticalValue} 
-                            sliderVertical={this.state.mushroomVertical}
-                            sliderHorizontal={this.state.mushroomHorizontal}
+                            sliderVertical={this.state.mushroomVertical} // Slaideris
+                            sliderHorizontal={this.state.mushroomHorizontal} // Slaideris
                             action={this.win} // Tikriname ar laimėjome
                         />
                     </div>
