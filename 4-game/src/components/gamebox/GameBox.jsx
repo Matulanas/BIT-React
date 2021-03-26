@@ -1,20 +1,10 @@
-import { Component } from "react";
 import { v4 as uuidv4 } from 'uuid';
 
-class GameBox extends Component {
-
-    constructor(props) {
-        super();
-        this.state= {
-            rows: props.rows // Dėl išsidėstymo turi būti: rows % 2 !== 0
-        }
-        this.hequeredBox = this.renderChequeredBox();
-        this.renderNumbers = this.renderNumbers();
-    }
+const GameBox = (props) => {
 
     // Renderinam languotą lentą
-    renderChequeredBox = () => {
-        const size = this.state.rows * this.state.rows;
+    const renderChequeredBox = () => {
+        const size = props.rows * props.rows;
         let boxArray = [];
         for (let i = 0; i < size; i++) {
             boxArray.push(<div className="grid-square" key={uuidv4()}></div>);
@@ -23,38 +13,36 @@ class GameBox extends Component {
     }
 
     // Renderinam numerius viršuje ir šone
-    renderNumbers = () => {
+    const renderNumbers = () => {
         let boxNumbers = [];
-        for (let i = 0; i < this.state.rows; i++) {
+        for (let i = 0; i < props.rows; i++) {
             boxNumbers.push(<div className="box-number" key={uuidv4()}>{i + 1}</div>);
         }
         return boxNumbers;
     }
 
-    render() {
-        return(
-            <div className="box">
-                <div className="box-children" style={{width: this.state.rows * 30}}>
-                    {/* Atvaizduojam TOP numerius */}
-                    <div className="top-numbers">
-                        {this.renderNumbers}
-                    </div>
-
-                    {/* Atvaizduojam languotą lentą */}
-                    {this.hequeredBox}
-
-                    {/* Atvaizduojam LEFT numerius */}
-                    <div className="left-numbers">
-                        {this.renderNumbers}
-                    </div>
-                    
-                    {/* Vaikas */}
-                    {this.props.children}
-                    
+    return(
+        <div className="box">
+            <div className="box-children" style={{width: props.rows * 30}}>
+                {/* Atvaizduojam TOP numerius */}
+                <div className="top-numbers">
+                    {renderNumbers()}
                 </div>
+
+                {/* Atvaizduojam languotą lentą */}
+                {renderChequeredBox()}
+
+                {/* Atvaizduojam LEFT numerius */}
+                <div className="left-numbers">
+                    {renderNumbers()}
+                </div>
+                
+                {/* Vaikas */}
+                {props.children}
+                
             </div>
-        )
-    }
+        </div>
+    )
 }
 
 export default GameBox;
