@@ -8,7 +8,8 @@ const Parent = () => {
 
     const rows = 11;
 
-    const [value, setValue] = useState({ mushroomHorizontal: 0, mushroomVertical: 0, score: 0 });
+    const [value, setValue] = useState({ mushroomHorizontal: 0, mushroomVertical: 0});
+    const [scores, setScore] = useState({ score: 0});
 
     const random = () => {
         const number = Math.floor(Math.random() * 230);
@@ -28,9 +29,10 @@ const Parent = () => {
     // Tikrinam ar laimėjom
     // Resetinam pradinius parametrus
     const win = () => {
-        let score = value.score;
+        let score = scores.score;
         if ( value.mushroomHorizontal > 260 && value.mushroomHorizontal < 330 && value.mushroomVertical > 240 && value.mushroomVertical < 290) {
-            setValue({mushroomVertical: random(), mushroomHorizontal: random(), score: ++score});
+            setValue({mushroomVertical: random(), mushroomHorizontal: random()});
+            setScore({ score: score + 1 })
         }
     }
 
@@ -49,7 +51,7 @@ const Parent = () => {
                 {/* Score box */}
                 <div className="score">
                     <span>Score:</span>
-                    <p>{value.score}</p>
+                    <p>{scores.score}</p>
                 </div>
 
                 {/* Conreoller box */}
