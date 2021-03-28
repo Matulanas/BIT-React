@@ -6,30 +6,33 @@ const Effect = () => {
     const [date, setDate] = useState(new Date()); // Keičiasi nuo tiktako
 
 
-
     useEffect(() => {
-        console.log('Zdrf Efektai'); // Visda kai persirenderina
+        console.log('VISADA'); // Visda kai persirenderina
     });
 
-    
+
+    // Pririštas prie DATE steito
     useEffect(() => {
-        console.log('Zdrf TikcTakai'); // Kai pasikeičia Date
+        console.log('DATE'); // Kai pasikeičia Date
     }, [date]);
 
 
+    // Pririštas prie COUNT steito
     useEffect(() => {
-        console.log('Zdrf Count'); // Kai pasikeičia Count
+        console.log('COUNT'); // Kai pasikeičia Count
     }, [count]);
 
 
     // componentSisMount veikimo imitacija
     useEffect(() => {
-        console.log('MOUNT');
+        // console.log('MOUNT');
         const timerID = setInterval(() => tictac(), 3000)
     }, []);
 
+
+    // Pririštas prie MYGTUKO
     const tictac = () => {
-        console.log('tak taks');
+        // console.log('tak taks');
         setDate(new Date());
     };
 
