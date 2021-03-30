@@ -13,7 +13,7 @@ const Photos = () => {
 
     useEffect(() => {
 
-        API.get('v2/list?page=1&limit=5')
+        API.get('v2/list?page=1&limit=10')
             .then(response => {
                 // console.log(response.data);
                 setPhotosListState(response.data);
