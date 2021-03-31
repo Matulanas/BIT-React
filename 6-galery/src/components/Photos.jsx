@@ -53,8 +53,8 @@ const Photos = () => {
 
 
     useEffect(() => {
-        const sorted = setPhotosListState(list);
-    }, [current])
+        setPhotosListState(list);
+    }, [list])
 
 
     return (
