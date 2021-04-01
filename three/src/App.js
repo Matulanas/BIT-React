@@ -5,9 +5,9 @@ import './App.css';
 // import { compose } from 'recompose';
 
 
-import ZooBox from './components/ZooBox';
+// import ZooBox from './components/ZooBox';
 
-// import ZooBox from './hocs/withZooBoxCompose';
+import ZooBox from './hocs/withZooBoxCompose';
 
 
 // import withZooBoxEmpty from './hocs/withZooBoxEmpty';
