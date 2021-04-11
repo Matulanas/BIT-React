@@ -33,10 +33,10 @@
 //     }
 // }
 
-import { useReducer } from 'react';
+import { useEffect, useReducer } from 'react';
 import carReducer from '../reducers/carReducer';
 import initCars from '../shared/cars';
-import { MAKE_BLACK, MAKE_YELLOW } from '../constants';
+import { MAKE_BLACK, MAKE_YELLOW, CHANGE_MAKER, SAVE_MAKER } from '../constants';
 
 const CarBox = props => {
 
@@ -44,10 +44,32 @@ const CarBox = props => {
 
     console.log(cars);
 
+    useEffect(() => {
+
+        localStorage.setItem('history', JSON.stringify([]));
+        // localStorage.setItem('person', 'Matas');
+        // localStorage.person = 'Matas';
+
+        // localStorage.removeItem('animal');
+
+        // for (let key in localStorage) { // negerai taip gaunasi
+        //     console.log(key);
+        // }
+
+        for (let key in localStorage) {
+            if (localStorage.hasOwnProperty(key)) {
+                console.log(key);
+            }
+        }
+    })
 
     return(
         <>
         <ul>
+        <div>
+            {localStorage.person} <br></br>
+            {/* {JSON.parse(localStorage.animal).name} */}
+        </div>
             {
                 cars.map(car => (
                     <li style={{border: '1px solid yellow', backgroundColor: car.color, display: 'flex', flexDirection: 'column'}} key={car.id}>
@@ -61,6 +83,17 @@ const CarBox = props => {
                                 onClick={() => dispatch({type: MAKE_YELLOW, payload: {id: car.id}})}
                                 style={{backgroundColor: 'yellow', color: 'black', padding: '5px', outline: 'none'}}
                             >Make Yellow</button>
+                        </div>
+                        <div style={{display: 'block'}}>
+                            <input 
+                                type="text"
+                                onChange={(e) => dispatch({type: CHANGE_MAKER, payload: {id: car.id, maker: e.target.value}})}
+                                value={car.newMaker}
+                            />
+                            <button
+                                onClick={() => dispatch({type: SAVE_MAKER, payload: {id: car.id}})} 
+                                style={{padding: '5px', outline: 'none'}}
+                            >Set New Maker</button>
                         </div>
                     </li>
 

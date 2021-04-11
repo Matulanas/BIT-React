@@ -1,6 +1,11 @@
-import { MAKE_BLACK, MAKE_YELLOW } from "../constants";
+import { CHANGE_MAKER, MAKE_BLACK, MAKE_YELLOW, SAVE_MAKER } from "../constants";
 
 const carReducer = (state, action) => {
+
+    // let history = JSON.parse(localStorage.history);
+    // history.unshift(state);
+    // localStorage.setItem('history', JSON.stringify(history));
+
 
     switch (action.type) {
         case MAKE_BLACK: 
@@ -15,6 +20,22 @@ const carReducer = (state, action) => {
         return state.map(car => {
             if (car.id === action.payload.id) {
                 return {...car, color: 'yellow'};
+            } else {
+                return car;
+            }
+        });
+        case CHANGE_MAKER: 
+        return state.map(car => {
+            if (car.id === action.payload.id) {
+                return {...car, newMaker: action.payload.maker};
+            } else {
+                return car;
+            }
+        });
+        case SAVE_MAKER: 
+        return state.map(car => {
+            if (car.id === action.payload.id) {
+                return {...car, maker: car.newMaker};
             } else {
                 return car;
             }

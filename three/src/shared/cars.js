@@ -3,27 +3,32 @@ const cars = [
     {
         id: 54,
         maker: 'Mercedes',
-        color: 'red'
+        color: 'red',
+        newMaker: ''
     },
     {
         id: 554,
         maker: 'Opel',
-        color: 'blue'
+        color: 'blue',
+        newMaker: ''
     },
     {
         id: 564,
         maker: 'Mercedes',
-        color: 'black'
+        color: 'black',
+        newMaker: ''
     },
     {
         id: 543,
         maker: 'Porshe',
-        color: 'red'
+        color: 'red',
+        newMaker: ''
     },
     {
         id: 541,
         maker: 'Audi',
-        color: 'green'
+        color: 'green',
+        newMaker: ''
     }
 ]
 
