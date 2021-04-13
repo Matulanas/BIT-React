@@ -33,12 +33,17 @@
 //     }
 // }
 
-import { useEffect, useReducer } from 'react';
+import { useContext, useEffect, useReducer } from 'react';
 import carReducer from '../reducers/carReducer';
 import initCars from '../shared/cars';
 import { MAKE_BLACK, MAKE_YELLOW, CHANGE_MAKER, SAVE_MAKER } from '../constants';
+import ButtonColor from '../context/ButtonColor';
 
-const CarBox = props => {
+const CarBox = () => {
+
+
+    const bttColor = useContext(ButtonColor);
+
 
     const [cars, dispatch] = useReducer(carReducer, initCars);
 
@@ -90,9 +95,17 @@ const CarBox = props => {
                                 onChange={(e) => dispatch({type: CHANGE_MAKER, payload: {id: car.id, maker: e.target.value}})}
                                 value={car.newMaker}
                             />
-                            <button
+                            {/* <ButtonColor.Consumer>
+                                { value=> (
+                                    <button
+                                        onClick={() => dispatch({type: SAVE_MAKER, payload: {id: car.id}})} 
+                                        style={{padding: '5px', outline: 'none', backgroundColor: value}}
+                                    >Set New Maker</button>
+                                )}
+                            </ButtonColor.Consumer> */}
+                             <button
                                 onClick={() => dispatch({type: SAVE_MAKER, payload: {id: car.id}})} 
-                                style={{padding: '5px', outline: 'none'}}
+                                style={{padding: '5px', outline: 'none', backgroundColor: bttColor}}
                             >Set New Maker</button>
                         </div>
                     </li>

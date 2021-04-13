@@ -1,5 +1,7 @@
+import { useContext } from 'react';
 import './App.css';
 import CarBox from './components/CarBox';
+import ButtonColor from './context/ButtonColor';
 // import Posts from './components/Posts';
 // import Users from './components/Users';
 
@@ -40,13 +42,18 @@ import CarBox from './components/CarBox';
 // const ZooBox = withZooBoxCompose(ZooBox);
 
 function App() {
+
+    const bttColor = useContext(ButtonColor);
+
   return (
     <div className="App">
       <header className="App-header">
         {/* <Users /> */}
         {/* <Posts /> */}
         {/* <ZooBox zooList={zooList}/> */}
-        <CarBox />
+        <ButtonColor.Provider value = {bttColor}>
+            <CarBox />
+        </ButtonColor.Provider>
       </header>
     </div>
   );
