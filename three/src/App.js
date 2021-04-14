@@ -1,6 +1,7 @@
-import { useContext } from 'react';
+import { createRef, useContext } from 'react';
 import './App.css';
 import CarBox from './components/CarBox';
+import RefBox from './components/RefBox';
 import ButtonColor from './context/ButtonColor';
 // import Posts from './components/Posts';
 // import Users from './components/Users';
@@ -43,7 +44,8 @@ import ButtonColor from './context/ButtonColor';
 
 function App() {
 
-    const bttColor = useContext(ButtonColor);
+    // const bttColor = useContext(ButtonColor);
+    const ref = createRef();
 
   return (
     <div className="App">
@@ -51,9 +53,10 @@ function App() {
         {/* <Users /> */}
         {/* <Posts /> */}
         {/* <ZooBox zooList={zooList}/> */}
-        <ButtonColor.Provider value = {bttColor}>
+        {/* <ButtonColor.Provider value = {bttColor}>
             <CarBox />
-        </ButtonColor.Provider>
+        </ButtonColor.Provider> */}
+        <RefBox ref={ref} />
       </header>
     </div>
   );
