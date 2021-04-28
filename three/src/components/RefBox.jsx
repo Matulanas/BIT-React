@@ -24,7 +24,7 @@ const RefBox = forwardRef((props, inputRef) => {
         console.log("Component MOUNTED", inputRef);
         inputRef.current.focus();
         inputRef.current.value = "lalalalaa";
-    }, [])
+    }, [inputRef])
     
     console.log("Component RERENDER", inputRef);
     return (
